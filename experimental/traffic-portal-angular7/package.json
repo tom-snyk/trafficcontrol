@@ -12,7 +12,9 @@
     "serve:ssr": "node dist/server.js",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run traffic-portal-angular7:server:production",
-    "autonomous:build": "npm run build:client-and-server-bundles && webpack --config webpack.server.config.js --no-progress --no-colors"
+    "autonomous:build": "npm run build:client-and-server-bundles && webpack --config webpack.server.config.js --no-progress --no-colors",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
@@ -35,7 +37,8 @@
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "typedoc": "^0.14.2",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.6",
@@ -61,5 +64,6 @@
     "tslint": "^5.14.0",
     "typescript": "~3.1.6",
     "webpack-cli": "^3.3.0"
-  }
+  },
+  "snyk": true
 }
